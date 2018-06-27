@@ -1,0 +1,178 @@
+Look into getting a Raspberry Pi and making an alexa? 
+
+Service and arcitechture, develop deploy and debug
+
+
+Partner Program
+
+Standard advanced and Premier, need two employees at associate level and 4 at professional
+level, big demand for certs, increase your salary by 26% 
+
+Devops Professional -> Certified Developer Associate , start with dev assc in the associate 
+tier, can go into devops professinal after potentially, 
+
+Sysops Administrator is hardest of assocaite exams, 
+
+Solutions archietect professinal is hardest for profesional exams, 
+
+Gonna learn alexa, some other servelet websites, poly service, 
+need AWS free tier, need domain name, 
+
+1300 updates, go to AWS this week .com, acloud.guro/aws-this-week
+
+Guro of the week ---- win t shirt!!!
+FREE TICKET TO REINVENT 2018
+
+subscribe to Youtube, like on facebook, follow on linkedin acloudguru
+
+upload certi to acloud platform, https:/acloud guru, they have exam simulator, 
+
+--------------------------------------------------------------------------------------------------------------
+there is a knowledge overlap between soultions architect and developer associate 
+
+this course teaches you how to pass the exam not to learn how to code, 
+so many avaiable SDK's, Software Develoement Kit, devkit, provides set of tools, libraries, 
+and relevent documentation, code samples, processes, and guides that allow developers to 
+create software applications on a specific platform, 
+
+his questions will be, how to optomize to work better with your aps? etc.. 
+
+Windows, will use putty to connect to AWS, 
+NEED AWS Free Tier, 
+
+Objective and things to know for AWS Exam, The Exam Blueprint 
+AWS Fundamentals 
+Designing and Developing 
+Deployment and Security 
+Debugging
+
+need at least 70% to pass on this exam, 
+
+Turn Raspberry Pi into an Echo? 
+
+AWS THE HISTORY SO FAR
+
+2003 - UNTIL NOW 
+
+WHY THIS IS IMPORTANT, WHY THEY ARE A MARKET LEADER ETC.. 
+
+before the cloud, we needed physical bits of kit, was a lot of overhead, now is a lot easier, 
+provision complex environments with AWS in a couple of minutes now 
+
+2003 chris pinkhan ben black
+SQS 2004
+AWS 2006
+
+2007 over 180,00 developers on the platform, 
+
+2010 all of amazon.com to AWS, 
+
+2012 First re:Invent Conference 
+
+2013 First Cert's launch, he got his in 2014 
+
+100% renewawble energy for its global footprint, 
+
+2016 run rate of 13 billion USD 
+
+host of AI services as well as VR SERVICES now this was 2017 
+last year we had over 1300+ services and update to AWS new service anouncments and updates 
+--------------------------------------------
+KEEP WATCHING AWS THIS WEEK 
+
+GARTNERS MAGIC QUADRANT - LEADER IN MARKET TRENDS, 
+4 QUADRANTS, CHALLENGERS, LEADERS, VISIONARIES, 
+AWS HAS BEEN WINNING  A LOT, GOOGLE AND MICROSOFT IBM AND ORACLE ARE FALLING BEHIND
+
+google, microsoft, aws, these are all important and on top, 
+aws most important, maybe microsoft azure, 
+
+
+----------------------
+10,000 foot overview 2018 part 1 
+-----------------------
+
+AWS Global Infrastructure 
+compute storage dabases migration netowrk conent and elivery devloper tools 
+machine learning media services analystic moblie srereviceess auguemnt reality an
+virtual reality  business producuitvity desktop and appstremint
+the internet of things 
+gamedevelopement 
+
+these are all on AWS and more ^^ lots of services etc...  this is the 10,000 foot overview, 
+
+region and availablity zone, 
+region, tokyo, london... then availabity zone is a data center, if there is flooding, they can survive
+etc.. 
+availiability zone is place to put your resources, region is a geographical area, 
+
+secret region for intellgicen services woww....
+
+edge location for caching, endpoints for AWS, cloudfront, amazons content elivery network, 
+once first person pulls down, will be cached close to them, pull from that edge location, more 
+edge locations than regions 
+
+---------------------------------------------------
+EXAM TIPS SUMMARY
+
+Region, availability zone (az) and edge location
+- region is a physical location in the world, has two or more AZ's, always at least 2
+- an AZ is one ore more discrete data centers, each has redundant power networking and 
+connectiity, houses in sepearte facilities, 
+- edge locations are endpoints for AWS, whic are used for caching content, typically consists of 
+CloudFront, Amazon's Content Delivery Network (CDN) 
+
+-----------------------------------------------------
+
+Parts and individual services, 
+elastic Beanstalk, for those who want to deploy but don't understand AWS, 
+EC2 first cloud computing, 
+lambda favorite upload code then execute, no operating, systems, just upload your code, 
+we will learn how to deploy with Lambda, 
+Lightsail virtual private service, more for people who dont want to know AWS, water downed
+verison of EC2, 
+batch is for batch computing in the cloud, 
+s3 oldest storage service, object based storage, 
+efs elastic file system, 
+glacier archive off of your data
+snowball bring in large amounts of data without using broadband or wifi, 
+then sent to aws and imported manually 
+storage gateway virtaul replicate info back to s3, 
+database, 
+RDS - MYSQL POSTGREESS ETC... they have aurora, any relatiosnal database will sit here, 
+dynamoDB for databases but none relational
+elasticace query things from you non database server 
+red shift - busineiss inteligence 
+migrations - aws migration hub, 
+application discovery service, track dependies for applications, 
+databases igration service, migrate form to ....
+migrate physical server into the cloud, 
+
+snowball used for migrating large amoutns of data, 
+
+VPC - virtual data center, firewalls, availability zones, addresses, ECL, root tables etc.... 
+
+any associate exam need to know VPC build inside out by memory, very fundemental and importnat
+
+cloud front - amazons content delivery network, 
+DNS serivce, look up name and get ip address, ipv4 and ipv6 address 
+ROUTE 53 IMPORTANT, go though and buy a domain name, 
+
+API gateway important, we will use this, way of creating your own API for other servies to talk to, 
+
+direct connect, way of running dedicated line from coporate head office into amazin, connect to vpc, 
+
+developer tools, not one service is in the dev exam, 
+code star, project manage your code, set up your code, release code in miniuutes, colab with 
+other devleoper s to work on project 
+code commit,  - source control to store your code, git repositories, 
+code build, once code is ready code build will complie and run tests 
+code deply is a deployent services, 
+code pipline a continuous deliversy serivce to realease software 
+x - ray to debug find root causes and bootttlenecks, - not in exam yet, 
+cloud 9 - ide environment, develp code in aws console, in web browser now, 
+
+
+
+
+

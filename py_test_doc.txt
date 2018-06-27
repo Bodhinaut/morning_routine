@@ -1,0 +1,33 @@
+Py Unit Testing 
+http://programeveryday.com/post/pytest-the-best-python-testing-module/
+----------------
+
+unittest
+nose
+pytest
+
+the three types of testing in python 
+
+first you need to install pytest, use pip, 
+
+pip install pytest
+
+must have test_ prefix befroe each unittest, 
+
+so have your function, import the module into the pytest file, 
+
+def test_whatever_total():
+	total = imported.function(5,5)
+	assert total == 9
+
+
+then run py.test in command in that folder, 
+
+py file, function names, all need test_ 
+
+
+two ways to execute, 
+
+python -m pytest
+
+also, can do py.test
