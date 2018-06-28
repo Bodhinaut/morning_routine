@@ -39,6 +39,7 @@ in Dynamo,
 Allows you to set up your own password rotation policy 
 Integrates with many different AWS services
 Supports PCI DSS Compliance - Payment Card Industry Data Security Standard
+
 --
 CRITICAL TERMS 
 Users - End Users (think people)
