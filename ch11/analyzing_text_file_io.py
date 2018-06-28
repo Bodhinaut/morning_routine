@@ -6,6 +6,7 @@ def count_words(filename):
 			contents = f_obj.read()
 	except FileNotFoundError:
 		msg = "Sorry, the file " + filename + " does not exist.."
+		# could pass here if we didnt want user to know anyting 
 		print(msg)
 
 	else:
@@ -14,5 +15,6 @@ def count_words(filename):
 		print("The file " + filename + " has about " + str(num_words) + " words..")
 
 
-filename = 'Dhammapada.txt'
-count_words(filename)
+filenames = ['Dhammapada.txt', 'siddartha.txt']
+for filename in filenames:
+	count_words(filename)

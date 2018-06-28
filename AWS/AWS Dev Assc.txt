@@ -99,6 +99,8 @@ virtual reality  business producuitvity desktop and appstremint
 the internet of things 
 gamedevelopement 
 
+an AWS region consists of an independent collection of aws computing resources in a defined geography
+
 these are all on AWS and more ^^ lots of services etc...  this is the 10,000 foot overview, 
 
 region and availablity zone, 
@@ -114,6 +116,21 @@ edge locations than regions
 
 ---------------------------------------------------
 EXAM TIPS SUMMARY
+
+Availability Zones - distinct location within a geographic area designed to provide high awailabiliyt 
+to a specifi geogrphy , disctince locations in AWS regions engineered to be isolated from failuers 
+
+an AWS region consists of an independent collection of aws computing resources in a defined geography
+
+Amazon Virtual Private Cloud is a networking service 
+
+object based file storage is Simple Storage Serives S3
+
+Route53 highly scable DNS service, named after port 53 where DNS resides 
+
+Currenlyt there are 16 AWS regions worldwide and 42 availvibity zones, 
+
+AWS  Elastic Map Reduce allows organizations to do complex analysis on large volumes of data.
 
 Region, availability zone (az) and edge location
 - region is a physical location in the world, has two or more AZ's, always at least 2
@@ -142,7 +159,7 @@ database,
 RDS - MYSQL POSTGREESS ETC... they have aurora, any relatiosnal database will sit here, 
 dynamoDB for databases but none relational
 elasticace query things from you non database server 
-red shift - busineiss inteligence 
+red shift - busineiss inteligence - amazons data warehouse service 
 migrations - aws migration hub, 
 application discovery service, track dependies for applications, 
 databases igration service, migrate form to ....
@@ -172,6 +189,131 @@ code pipline a continuous deliversy serivce to realease software
 x - ray to debug find root causes and bootttlenecks, - not in exam yet, 
 cloud 9 - ide environment, develp code in aws console, in web browser now, 
 
+
+Cloudformatin, - wordpress site, reuse code to deploy inside wherever, infrasturcure into cllloud
+cloud watch, sys ops
+cloud trail used to log changes to aws environment, 
+
+use cloud trail if you get hacked, 
+
+aws config, monitors the config of your entire aws environment,  see how all configured
+OpsWorks, more robust Beanstalk, 
+service catalog, virtual macine imagres, milt tier architetecure, big organziations use, 
+systems manageer, manager EC2 and other services, for security, 
+trusted advisor, security associate, pros, gives advice around security, ports open, using aws as much 
+as you should? Its like an aws accountant for you
+managed services, EC2 instances etc... this can help you out
+cloudwatch this was management tools 
+
+media services brand new basicallly 
+elastic transcodeer, takes recorded video and resized to look better on other apps 
+media convert media live media package media store media tailer 
+file based media transformer, media live created high quality videos to deliver, media package 
+protects video over internet
+media store deliver live and on demand video content, media tailor, 
+
+MACHINE LEARNING 
+sage maker, for deep learning, i need to look into this, 
+
+comprehend, - people saying good stuff?
+Deep lens, aware camera, it can figure out what it is looking at? Create app to detect someone coming
+to your front door, should somone open the door or not? 
+Lex - powers amaon alexa service, AI way to chat with your customers, 
+Machine learning, - deep learning neural networks, machine learning is throw data set into cloud, 
+it will analyze and give you result, will decide and predict an outcome based off of the data, 
+recommended products uses this machine learning 
+Polly - takes text and turns into speech, - we will focus on this later, we will take notes, save into text 
+editor, use polly to convert into MP3 files, stream to an aamzon echo, wont appear on exams 
+Rekoginition - video and images, upload file, will tell you dog beach ball, percentages to accureacy, 
+Amazon translate, like google translate 
+amazon transcribe - automatic speech recontion, recognize speecch turn into text, then put into 
+transate then put into polly, portable echo, transcribe, translate, polly 
+
+Analytic 
+Athena - run SQL QUIERIES in a s3 bucket?? desing sql query to return results and do stuff, 
+EMR - processing large amoutns of data, big data solutions, lots of servers and chops up your dat 
+for analyis 
+cloud search and elastic search services for searchings in aws?
+Kinesis - kinesis video streams, a way of ingeting large amoutns of data into aws, look at tweets 
+find hash tag etc... 
+quick sight - amazons business intelligent tool, fraction of cost of other business analysi tools, 
+
+data pipline, move data in other aws services, 
+glue - new service used for ETL, 
+
+-------------- part 4 of 10000 foot overview 
+
+security identity and compliaiance - certified security specialist exam, 
+
+IAM - identiy access management, need to know this inside and out, 
+cognito- device authentication - authenticate using mobile apps on phone, request temp access to aws 
+services, can store geographic location , destination, authenctaion services temp access 
+GuardDuty looks for mallicious activity on your aws account 
+Inspector install on virtual machine and run tests against it, looks for secuiryt vunerablites, schedule 
+weekly or monthly etc.... 
+Macie - scans thins and alerts credit cards 
+Certificat Manager, manage your SSL certs 
+CloudHSM - Hardware security module, dedicated bits of software to store your encryption keys, pay one
+dollar twenty an hour, 10s to hundreds of thousands of dollars it used to cost 
+directory services, integrate microsoftw active services, 
+WAF web application firewall, stops sql injections etc... application layer, is this user malicious? etc.. 
+Shield - get by defulat for lots of aws services, helps to prvent DDOS attacks, aws wont charge you for 
+ddos attack, distributed denial of services 
+artifact aws compliance rports, sock controls, service organaction controls, pci reports, 
+
+ALL SHOULD KNOW FOR CERTS  
+IAM INSPECTIE 
+CLOUD HSM 
+WAF 
+SHIELD 
+CERTIFIACTE MANAGER
+
+----------
+Moblie services, moble hub, sets up aws services for your mobile app, pinpoint, use targetd push notifica
+to drive groupon 50 percent off restrautn, etc
+aws app sync, new services, automaticlaly updates data and web applications in real time 
+device farm, way of testing your apps on live devices,  mobile analystics, 
+
+AR / VR augmented and virtual reality, code name Sumerian first ever langauge written down, 
+common set of tools to communicat eideas, 
+go into amazon and build your own rooms, 
+application integrations 
+setp functions, does stuff with your lambdas, amazon mq - 
+sns sqs ans swf old services, important to know 
+IMPORTANT TO KNOW SNS SQS SWF accoutn has gone over 10 dollars, sqs can overlay text to images
+ decouple infrastucure, SWF order package online, creates simple workflow job, 
+connect and simple email services 
+connect cloud call center, configure customer anagmaements, engagements, 
+simple emial serives, send large amoutns of email, large scale, pay as you go, 
+business productive 
+alexa for business, use to dial into meeting room, tell IT printer broken, order ink, etc...
+Chime - video conferencing, like google hangouts, 
+Work docs, dropbox for aws, workmail, like office 365 likfe google mail ,
+work docs, 
+chime for video conference calls 
+workspace and appstream 2.0 
+internet of tings 
+iOT and iOT device managemnt, thousands of devices sending back info, scaling is an issue that is 
+what this does, amazon freeROTS insatll free midcro constroller,s 
+green grass,  IOT one of the hottest fields in tech, 
+Game Devleopmenet 
+game lift, help to developer games, 
+---------------------------------------------------------------------------------------------------------------------
+Developer Associate will dive into....
+APPLICATION INTEGRATION
+SECURITY AND IDENTITY AND COMPLIANCE 
+ANALYSTICS
+MANAGEMENET TOOLS
+NETWROKING AND CONTENT DELIVERY DELIVERY
+DATABASES
+STORAGE
+COMPUTE 
+
+DYNAMO DB IMPORTANT, 
+NEED TO KNOW VPC IN AND OUT MAKE AND BREAK OF ALL EXAMS, 
+-----------------------
+
+HERACLITUS - GREEK PHILOSPHER, EVERYTHIG CHANGES AND NOTHIG STANDS STILL 
 
 
 
