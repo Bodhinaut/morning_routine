@@ -41,7 +41,9 @@ Integrates with many different AWS services
 Supports PCI DSS Compliance - Payment Card Industry Data Security Standard
 
 --
+
 CRITICAL TERMS 
+
 Users - End Users (think people)
 Groups - A collections of users under one set of permissions (groups users together and apply permission
 to that specified group, ex, finance group, system adminstrator group)
