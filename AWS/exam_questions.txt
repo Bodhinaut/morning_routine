@@ -1,0 +1,81 @@
+Exam Questions AWS 
+---
+Part one AWS Regions, Availability Zones, Edge locations
+
+Availability Zones - disctince locations in AWS regions engineered to be isolated from failuers 
+
+an AWS region consists of an independent collection of aws computing resources in a defined geography
+
+Amazon Virtual Private Cloud is a networking service 
+
+object based file storage is Simple Storage Serives S3
+
+Route53 highly scable DNS service, named after port 53 where DNS resides 
+
+Currenlyt there are 16 AWS regions worldwide and 42 availvibity zones, 
+
+AWS  Elastic Map Reduce allows organizations to do complex analysis on large volumes of data.
+
+Region, availability zone (az) and edge location
+- region is a physical location in the world, has two or more AZ's, always at least 2
+- an AZ is one ore more discrete data centers, each has redundant power networking and 
+connectiity, houses in sepearte facilities, 
+- edge locations are endpoints for AWS, whic are used for caching content, typically consists of 
+CloudFront, Amazon's Content Delivery Network (CDN) 
+
+---
+Identity and Access Management IAM Quiz
+
+Which statement best describes IAM?
+ - Allows you to manage users, groups, roles and their corresponding level of access to the AWS
+ platform
+---
+
+Features of IAM
+ - centralised control of AWS, integrates existing actice directoy account allowing single sign on
+also has fine grained access control to AWS resources
+
+---
+
+EC2 instances can have credentials stored on them so that the instances can access 
+other resources (such as S3 buckets)  AND AWS recommends that you do this instead
+ of assigning roles.
+FALSE
+
+---
+
+What is the name of the service to allow users to use their social media
+ account to gain temporary access to the AWS platform?
+ - Web Identity Federation
+---
+What is the API call used to obtain temporary security credentials when authenticating 
+using Web Identity Federation?
+AssumeRoleWithWebIdentity
+---
+What is the name of the API call to request temporary security credentials from the
+ AWS platform when federating with Active Directory?
+AssumeROleWithSAML
+----
+When using active directory to authenticate to AWS what are the correct steps performed?
+
+User navigates to Active Directory Federation Services (ADFS) webserver 2.) User enter their 
+single sign on credentials 3.) the user's web browser recieves a SAML assertion from the AD
+server 4.) the user's browser then posts the SAML assertion to the AWS SAML end point for SAML 
+and the AssumeRoleWithSAML API request is used to request temporrary security credentials. 5.)
+The user is then able to access the AWS Console. 
+
+---
+SAML stands for Security Assertion Markup Language.
+TRUE
+
+---
+
+The AWS sign-in endpoint for SAML is https://signin.aws.amazon.com/saml
+TRUE
+---
+When using Web Identity Federation to allow a user to access an AWS service (such as an S3 bucket) 
+what is the correct order of steps?
+
+1. User authenticates with medium, FB google whatever..... they are then given an ID token by
+FaceBook (for example) An API called ARWWI AssumeRoleWithWebIdeneity is then used in 
+conjunction with the ID toke. A user is then granted temporary security credentials. 

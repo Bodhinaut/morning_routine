@@ -46,5 +46,28 @@ it is a new DNS name space,
 
 Security status, 5 different ticks are available, - Delete your root access keys is already checked, 
 
+----
+Other notes in paper hard copy
+
+---
+
+What have we learned so far?
+- IAM consist of the following 
+Users
+Groups - way to group users together and apply policies to them collectivly 
+Roles
+Policy Documents - apply to users gorup ands roles universally 
+make up of JSON key value pair, attribute and value 
+javascript object model 
+
+IAM is universal, not apply to regions, 
+the root account is the account created when you setupr your AWS account, have to give permissions 
+New users have NO permissions when first created 
+new users are assinged access key id and secret access keys when first created 
+these are not the same as password, cannout use the access key id and secret to login to console
+you can use to access AWS via the APIs and CLI 
+once get save, wont get again 
+always setup multfacor authenticaooon on your root account, -- google authentiocaon 
+you can create and customise your own password and rotation policies 
 
 
