@@ -1,4 +1,4 @@
-### 3:00 AM - 7:00 AM
+### 3:00 AM - 7:00 AM 6/26/2018
 
 * AWS course working toward Developer Associate Cert.
 * MySQL and databases
@@ -9,3 +9,9 @@
 
 ---
 
+### 6/29/2018
+* AWS course - went over IAM, 
+* Py ETL
+* Continued work in Django course
+
+---
