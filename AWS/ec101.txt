@@ -1,0 +1,126 @@
+EC2
+ECC
+Amazon Elastic Computer Cloud - virtual machine in cloud, only take minutes to get going
+resizable, quickly scale up and down, as your computing requirements change 
+use to take 10 days to months to get servers, now takes minutes, amazon led this industry change 
+
+can add more and more instances behind elactic load balancer, pay for capacity you use, use to have to buy 
+servers and over provision, pay for what you need as you use it, amazing, pay by the hour or by the second, 
+
+EC2 Options, 
+On Demand: pay fixed rate by hour or second with no commitment; linux by second windows by hour, 
+
+Reserved Instances: capacity reservation, 1 to three years, discount and you pay for year long terms 
+
+Spot - enables to bid a price, for instance capacity, give lots of savings if you get the price, 
+if your app has flexible start and end times this is a good option, but the share when it drops, for a sale when it 
+goes over a certain amount 
+
+Dedicated Hosts - Physical EC2 server dedicated for your use, dedicated hosts can help you reduce costs 
+
+----- 
+
+Use cases for pricing models 
+On Demand : Low cost and flexibility of amaozon EC2 without up fron payment or long term commitemnt, 
+
+Application being developer or tested on Amaazon EC2
+
+Reserved Instances: an actual web service, up front payment to reduce computing costs, pay all up front for 
+3 year contract get a great discount, 
+Standard RIs can be up to 75% off on demand costs, 
+Convertible RIs 54% off, can change your reservations, go from CPU intensive to memory intensive instance, 
+not locked into an instance time, 
+
+Scheudlued Reserved Instances : launched in a time window, recurring schedule, fraction of day or month, 
+scale from on demand scale back 
+
+Spot instances: flexible start and end times, applictions feasible at very low compute prices 
+do huge amount of compute at 4 am on a sunday morining, its spoty, bang, 
+users with an urgent need for large amounts of additional computing capacity 
+
+Dedicated Hosts: regulatory requirments that may not supor t multi-tenant virtualization, could expose data 
+to someone else, ??
+great for licesning 
+can be purchased on demand hourly 
+puurcahses as reservation for 70% off
+
+EC2 Instance Types -- dont need to memorize going into associate exams, useful at professional lvl, 
+F1 - data analytics   --- LETTER FOR EXAM 
+I3 - databases
+G3 - video encoding 
+H1 - file systems 
+T2 - web serves small databases
+D2 - data warehousing 
+R4 - ram memory intensive 
+M5- general purpose application servers 
+C5 compute optimized - cpu intensive apps and databases 
+P3 - general purpose GPUS machine learning, bit coing mining 
+X1 - huge amoutns of RAM, apache spark, SAP HANA 
+
+Imagine Edwards Notrton fighting Dr Mc Px, a scotting duck who likes to hand out pictures of scotland, 
+F - FPGA
+I - IOPS
+G - Graphics
+H - High Disk Throughput
+T - cheap general purpose (think T2 Micro)
+D - Density 
+R - RAM
+M - main choice for general purpose apps
+C - Compute
+P - Graphics (think Pics)
+X - Extreme Memory
+
+WHAT IS EBS?
+EC2 virtual servier in cloud, EBS is ELASTIC BLOCK STORAGE it is a virtual disc, 
+create storage volumes and attach them to EC2 instances, placed in AZ and replicated to protect from failure, 
+spread across AZ, EBS will be fine if one disc dies, EBS is disc in cloud that coonects to EC2 instance, 
+windows installed on C:drive, but can have other drives, 
+EBS 
+genreal purpose SSD (GP2)
+general puspose balances both price and performance, Input Output Operations Per Second
+EXAM - less the 10,00 IOPS, then you want GP2 EXAM 
+Provisioned IOPS SSD - instensive applications RDMS, NOSQL , need extreme performace, if you need more than 
+10,000 IOPS , big SQL, go PROVISIONS IOPS SSD, provision 20000 IOPS per volume, 
+
+EBS volumes, throughtput optimized disc is additional volume not boot volume 
+big data, data warehouse, long procssing 
+
+Magnetic Standar
+lowest cost mangetic bootable volume, legacy, lowest storage cost is important, 
+
+EC2 EXAM TIPS
+- ON DEMAND - fix rate by the hour or by the second with no commitment 
+- RESERVED - capacity reservation, offer significant discount on hourly charge for an 
+insatance   1 Year of 3 Year terms 
+- SPOT - bid a price, for instance capacity, great savings if your app have flexible start and 
+end times, pay only for what you bid on, prolly charged by the hour 
+- DEDICATED HOSTS - physical EC2 server dedicated for your use, help you reduce cost
+by allowing you to use existing server-bound software license 
+
+is SPOT instance is terminated by EC2, you will not be charged for partial hour of usage, 
+howver, if you temrinate the instance yourself you will be chaged for the time it ran 
+POPULAR EXAM QUESTION ABOVE 
+remember FIGHT DR MC PX
+
+EXAM 
+
+SSD - GENERAL PURPOSE SSD - balanc price and performance for wide workloads
+Provisioned IOPS SSD - Highest performance SSD volume for mision-critical low-latency 
+or high-throughput workloads
+
+Magnetic
+Throughoutput Optimized HDD - low cost HDD volume designed for frequenctly accessed 
+thoughput intenisve workload 
+
+A defined workload can be specified as a benchmark when evaluating a computer system 
+in terms of performance (how easily the computer handles the workload), which in turn is 
+generally divided into response time (the time between a user request and a response to 
+the request from the system) and throughput (how much work is accomplished over a 
+period of time).
+
+COLD HDD - lowest cost HDD volume for less frequently accessed workload
+Magnetic - Legacy, boot volume 
+
+-------------------------
+EC2 101 PART 2
+
