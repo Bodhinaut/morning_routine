@@ -20,3 +20,9 @@
 * AWS course, started EC2
 * Programer Analaysts Test
 * Django Course
+
+### 7/1/2018
+* AWS EC2 part 2, reviewd IAM
+* LSAT practice questions
+* Django Course
+
