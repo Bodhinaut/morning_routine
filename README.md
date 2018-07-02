@@ -21,8 +21,16 @@
 * Programer Analaysts Test
 * Django Course
 
+---
+
 ### 7/1/2018
 * AWS EC2 part 2, reviewd IAM
 * LSAT practice questions
 * Django Course
 
+---
+
+### 7/2/2018
+* Django Course, almost finshed with lesson overview
+* LSAT + PAAT
+* AWS review
