@@ -15,3 +15,8 @@
 * Continued work in Django course
 
 ---
+
+### 6/30/2018
+* AWS course, started EC2
+* Programer Analaysts Test
+* Django Course
