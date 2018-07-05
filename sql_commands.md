@@ -155,6 +155,7 @@ SHOW WARNINGS;
 note, warning will go away after you enter another command, 
 
 ----------------------------------
+
 NULL and NOT NULL Code
 Try inserting a cat without an age:
 
@@ -241,6 +242,7 @@ SELECT * FROM cats3;
 INSERT INTO cats4(name, age) VALUES('Cali', NULL);
 
 -----------------------------------------
+
 PRIMARY KEYS
 
 CODE: Primary Keys
