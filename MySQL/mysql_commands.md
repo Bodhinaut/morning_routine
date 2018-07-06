@@ -420,5 +420,87 @@ DESC cats;
 
 ----------------------
 
+UPDATE ALTER EXISTING DATA, MADE A MISTAKE???? FOR GOT PASSOWRKD USER, CHANGE 
+PROFILE PICTURE ON FACEBOOK, ETC......
+
+UPDATE cats SET breed='Shorthair'
+WHERE breed='Tabby';
+
+--------------------------
+CODE: Updating Data
+Change tabby cats to shorthair:
+
+UPDATE cats SET breed='Shorthair' WHERE breed='Tabby'; 
+
+Another update:
+
+UPDATE cats SET age=14 WHERE name='Misty'; 
+-------------------------
+rememebr you can always update by unique id, 
+also check with select firs,t 
+check if the name is there etc.... 
 
 
+CODE: Update Challenges Solution
+SELECT * FROM cats WHERE name='Jackson';
+ 
+UPDATE cats SET name='Jack' WHERE name='Jackson';
+ 
+SELECT * FROM cats WHERE name='Jackson';
+ 
+SELECT * FROM cats WHERE name='Jack';
+ 
+SELECT * FROM cats WHERE name='Ringo';
+ 
+UPDATE cats SET breed='British Shorthair' WHERE name='Ringo';
+ 
+SELECT * FROM cats WHERE name='Ringo';
+ 
+SELECT * FROM cats;
+ 
+SELECT * FROM cats WHERE breed='Maine Coon';
+ 
+UPDATE cats SET age=12 WHERE breed='Maine Coon';
+ 
+SELECT * FROM cats WHERE breed='Maine Coon';
+
+-------------------
+
+DELETE 
+DELETE FROM cats WHERE name='egg';
+
+DELETE FROM cats; -- DELETES ALL ENTRIES IN TABLE SHIT
+
+CODE: DELETING DATA
+DELETE FROM cats WHERE name='Egg';
+ 
+SELECT * FROM cats;
+ 
+SELECT * FROM cats WHERE name='egg';
+ 
+DELETE FROM cats WHERE name='egg';
+ 
+SELECT * FROM cats;
+ 
+DELETE FROM cats;
+
+-------------------
+
+CODE: DELETE Challenges Solution
+SELECT * FROM cats WHERE age=4;
+ 
+DELETE FROM cats WHERE age=4;
+ 
+SELECT * FROM cats WHERE age=4;
+ 
+SELECT * FROM cats;
+ 
+SELECT *  FROM cats WHERE cat_id=age;
+ 
+DELETE FROM cats WHERE cat_id=age;
+ 
+DELETE FROM cats;
+ 
+SELECT * FROM cats;
+
+--------------
