@@ -250,3 +250,16 @@ ALIASES
 
 SELECT cat_id AS id, name FROM cats;
 
+------------
+
+FINISHED CRUD 
+
+MOVING onto STRING FUNCTIONS IN SQL
+
+Running SQL files; 
+
+reading data out, aggregate funcitons, etc.. 
+
+specifically string funcitons, 
+
+RUNNING SQL FILES, then run when ready, 
