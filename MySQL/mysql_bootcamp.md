@@ -1,4 +1,5 @@
 https://www.w3schools.com/sql/sql_quickref.asp
+http://www.dpriver.com/pp/sqlformat.htm
 
 MySQL
 ----------------------
