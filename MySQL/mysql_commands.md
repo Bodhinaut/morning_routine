@@ -935,5 +935,111 @@ SELECT DISTINCT author_fname, author_lname FROM books;
 -----------
 
 
+ORDER
+
+SELECT author_laname FROM books ORDER BY author_lname;
+alphabetical 
+if you add DESC on the end it reverses the order 
+----------
+can sort numbers as well, 
+
+YOU CAN mix and match, 
+
+like SELECT title, released_year, pages FROM books ORDER BY title; etc... 
+
+
+SELECT title, author_fname, author_lname, FROM books ORDER BY 2; 
+
+2 is a short cut to order is by firstname for example, 
+
+---
+
+Section 8, Lecture 125
+SELECT author_lname FROM books;
+ 
+SELECT author_lname FROM books ORDER BY author_lname;
+ 
+SELECT title FROM books;
+ 
+SELECT title FROM books ORDER BY title;
+SELECT author_lname FROM books ORDER BY author_lname DESC;
+ 
+SELECT released_year FROM books;
+ 
+SELECT released_year FROM books ORDER BY released_year;
+ 
+SELECT released_year FROM books ORDER BY released_year DESC;
+ 
+SELECT released_year FROM books ORDER BY released_year ASC;
+ 
+SELECT title, released_year, pages FROM books ORDER BY released_year;
+ 
+SELECT title, pages FROM books ORDER BY released_year;
+ 
+SELECT title, author_fname, author_lname 
+FROM books ORDER BY 2;
+ 
+SELECT title, author_fname, author_lname 
+FROM books ORDER BY 3;
+ 
+SELECT title, author_fname, author_lname 
+FROM books ORDER BY 1;
+ 
+SELECT title, author_fname, author_lname 
+FROM books ORDER BY 1 DESC;
+ 
+SELECT author_lname, title
+FROM books ORDER BY 2;
+ 
+SELECT author_fname, author_lname FROM books 
+ORDER BY author_lname, author_fname;
+
+above is importatn, you are ordering and need alpha but what if same last name? order
+then by the first name; 
+---
+LIMIT 
+I want the first 2 best selling books as opposed to all of them 
+
+----------
+
+Section 8, Lecture 127
+SELECT title FROM books LIMIT 3;
+ 
+SELECT title FROM books LIMIT 1;
+ 
+SELECT title FROM books LIMIT 10;
+ 
+SELECT * FROM books LIMIT 1;
+ 
+SELECT title, released_year FROM books 
+ORDER BY released_year DESC LIMIT 5;
+ 
+SELECT title, released_year FROM books 
+ORDER BY released_year DESC LIMIT 1;
+ 
+SELECT title, released_year FROM books 
+ORDER BY released_year DESC LIMIT 14;
+ 
+SELECT title, released_year FROM books 
+ORDER BY released_year DESC LIMIT 0,5;
+ 
+SELECT title, released_year FROM books 
+ORDER BY released_year DESC LIMIT 0,3;
+ 
+SELECT title, released_year FROM books 
+ORDER BY released_year DESC LIMIT 1,3;
+ 
+SELECT title, released_year FROM books 
+ORDER BY released_year DESC LIMIT 10,1;
+ 
+SELECT * FROM tbl LIMIT 95,18446744073709551615;
+ 
+SELECT title FROM books LIMIT 5;
+ 
+SELECT title FROM books LIMIT 5, 123219476457;
+ 
+SELECT title FROM books LIMIT 5, 50;
+
+---
 
 
