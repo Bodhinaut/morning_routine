@@ -504,3 +504,436 @@ DELETE FROM cats;
 SELECT * FROM cats;
 
 --------------
+
+CODE: CRUD Exercise Create Solution
+Section 6, Lecture 91
+SELECT database();
+ 
+CREATE DATABASE shirts_db;
+ 
+use shirts_db;
+ 
+SELECT database();
+ 
+CREATE TABLE shirts
+  (
+    shirt_id INT NOT NULL AUTO_INCREMENT,
+    article VARCHAR(100),
+    color VARCHAR(100),
+    shirt_size VARCHAR(100),
+    last_worn INT,
+    PRIMARY KEY(shirt_id)
+  );
+ 
+DESC shirts;
+ 
+INSERT INTO shirts(article, color, shirt_size, last_worn) VALUES
+('t-shirt', 'white', 'S', 10),
+('t-shirt', 'green', 'S', 200),
+('polo shirt', 'black', 'M', 10),
+('tank top', 'blue', 'S', 50),
+('t-shirt', 'pink', 'S', 0),
+('polo shirt', 'red', 'M', 5),
+('tank top', 'white', 'S', 200),
+('tank top', 'blue', 'M', 15);
+ 
+SELECT * FROM shirts;
+ 
+INSERT INTO shirts(color, article, shirt_size, last_worn) 
+VALUES('purple', 'polo shirt', 'medium', 50);
+ 
+SELECT * FROM shirts;
+
+--------------------
+SELECT article, color FROM shirts;
+ 
+SELECT * FROM shirts WHERE shirt_size='M';
+ 
+SELECT article, color, shirt_size, last_worn FROM shirts WHERE shirt_size='M';
+
+-----------
+
+SELECT * FROM shirts WHERE article='polo shirt';
+ 
+UPDATE shirts SET shirt_size='L' WHERE article='polo shirt';
+ 
+SELECT * FROM shirts WHERE article='polo shirt';
+ 
+SELECT * FROM shirts;
+ 
+SELECT * FROM shirts WHERE last_worn=15;
+ 
+UPDATE shirts SET last_worn=0 WHERE last_worn=15;
+ 
+SELECT * FROM shirts WHERE last_worn=15;
+ 
+SELECT * FROM shirts WHERE last_worn=0;
+ 
+SELECT * FROM shirts WHERE color='white';
+ 
+UPDATE shirts SET color='off white', shirt_size='XS' WHERE color='white';
+ 
+SELECT * FROM shirts WHERE color='white';
+ 
+SELECT * FROM shirts WHERE color='off white';
+ 
+SELECT * FROM shirts;
+
+-----------
+SELECT * FROM shirts;
+ 
+SELECT * FROM shirts WHERE last_worn=200;
+ 
+DELETE FROM shirts WHERE last_worn=200;
+ 
+SELECT * FROM shirts WHERE article='tank top';
+ 
+DELETE FROM shirts WHERE article='tank top';
+ 
+SELECT * FROM shirts WHERE article='tank top';
+ 
+SELECT * FROM shirts;
+ 
+DELETE FROM shirts;
+ 
+SELECT * FROM shirts;
+ 
+DROP TABLE shirts;
+ 
+show tables;
+ 
+DESC shirts;
+-----------
+
+CREATE TABLE cats
+    (
+        cat_id INT NOT NULL AUTO_INCREMENT,
+        name VARCHAR(100),
+        age INT,
+        PRIMARY KEY(cat_id)
+    );
+ 
+mysql-ctl cli
+ 
+use cat_app;
+ 
+source first_file.sql
+ 
+DESC cats;
+ 
+ 
+ 
+INSERT INTO cats(name, age)
+VALUES('Charlie', 17);
+ 
+INSERT INTO cats(name, age)
+VALUES('Connie', 10);
+ 
+SELECT * FROM cats;
+ 
+source testing/insert.sql
+-------------------------------
+
+CONCAT 
+String functions 
+
+goolge - mysql string functions, mysql documenations, :) 
+sort  stuf in cartain ways obvious, important, 
+
+how combine? 
+what if i want full names? 
+CONCAT(x, y, z)
+CONCAT(column, anotherColumn)
+
+
+CONCAT_WS - with seperator, 
+
+SELECT CONCAT(title, '-', author_fname, '-', author_lname) FROM books;
+or ....
+first thing you pass in is what you want the seperator to be
+
+SELECT
+	CONCAT_WS('-', title, author_fname, author_lname)
+FROM books; 
+
+-------------
+
+CODE: Working With CONCAT
+Section 7, Lecture 104
+SELECT author_fname, author_lname FROM books;
+ 
+CONCAT(x,y,z) // from slides
+ 
+CONCAT(column, anotherColumn) // from slides
+ 
+CONCAT(author_fname, author_lname)
+ 
+CONCAT(column, 'text', anotherColumn, 'more text')
+ 
+CONCAT(author_fname, ' ', author_lname)
+ 
+CONCAT(author_fname, author_lname); // invalid syntax
+ 
+SELECT CONCAT('Hello', 'World');
+ 
+SELECT CONCAT('Hello', '...', 'World');
+ 
+SELECT
+  CONCAT(author_fname, ' ', author_lname)
+FROM books;
+ 
+SELECT
+  CONCAT(author_fname, ' ', author_lname)
+  AS 'full name'
+FROM books;
+ 
+SELECT author_fname AS first, author_lname AS last, 
+  CONCAT(author_fname, ' ', author_lname) AS full
+FROM books;
+ 
+SELECT author_fname AS first, author_lname AS last, 
+  CONCAT(author_fname, ', ', author_lname) AS full
+FROM books;
+ 
+SELECT CONCAT(title, '-', author_fname, '-', author_lname) FROM books;
+ 
+SELECT 
+    CONCAT_WS(' - ', title, author_fname, author_lname) 
+FROM books;
+
+-------------------
+
+SUBSTRING 
+sleect portions of a string 
+SELECT SUBSTRING('hello world', 1, 4);
+string you wnat to work with, print one to 4 
+SQL starts at ONE WHYY????
+
+GENERAL NOTE USE DOUBE QUOTE TO ESCAPE OTHER CHAR 
+
+can combine concat and substring 
+
+----------------------
+
+SELECT SUBSTRING('Hello World', 1, 4);
+ 
+SELECT SUBSTRING('Hello World', 7);
+ 
+SELECT SUBSTRING('Hello World', 3, 8);
+ 
+SELECT SUBSTRING('Hello World', 3);
+ 
+SELECT SUBSTRING('Hello World', -3);
+ 
+SELECT SUBSTRING('Hello World', -7);
+ 
+SELECT title FROM books;
+ 
+SELECT SUBSTRING("Where I'm Calling From: Selected Stories", 1, 10);
+ 
+SELECT SUBSTRING(title, 1, 10) FROM books;
+ 
+SELECT SUBSTRING(title, 1, 10) AS 'short title' FROM books;
+ 
+SELECT SUBSTR(title, 1, 10) AS 'short title' FROM books;
+ 
+SELECT CONCAT
+    (
+        SUBSTRING(title, 1, 10),
+        '...'
+    )
+FROM books;
+ 
+source book_code.sql
+ 
+SELECT CONCAT
+    (
+        SUBSTRING(title, 1, 10),
+        '...'
+    ) AS 'short title'
+FROM books;
+ 
+source book_code.sql
+
+----------------
+
+REPLACE replace parts of strings 
+SELECT REPLACE('hELLO WORLD', 'HELL', '&^%$');
+
+--------
+
+SELECT 
+	SUBSTRING(REPLACE(title, 'e', '3'), 1, 10) AS 'weird string'
+FROM books;
+
+-----------
+
+
+Section 7, Lecture 108
+SELECT REPLACE('Hello World', 'Hell', '%$#@');
+ 
+SELECT REPLACE('Hello World', 'l', '7');
+ 
+SELECT REPLACE('Hello World', 'o', '0');
+ 
+SELECT REPLACE('HellO World', 'o', '*');
+ 
+SELECT
+  REPLACE('cheese bread coffee milk', ' ', ' and ');
+ 
+SELECT REPLACE(title, 'e ', '3') FROM books;
+ 
+-- SELECT
+--    CONCAT
+--    (
+--        SUBSTRING(title, 1, 10),
+--        '...'
+--    ) AS 'short title'
+-- FROM books;
+ 
+SELECT
+    SUBSTRING(REPLACE(title, 'e', '3'), 1, 10)
+FROM books;
+ 
+SELECT
+    SUBSTRING(REPLACE(title, 'e', '3'), 1, 10) AS 'weird string'
+FROM books;
+Notes: 
+- Use cmd + /  (mac) or ctrl + /  (pc) to comment out SQL in c9.
+- The REPLACE() function, as well as the other string functions, only change the query output, they don't affect the actual data in the database.
+
+-------------------
+REVERSE 
+REVERSES STRINGS 
+
+SELECT REVERS('HELLO WORLD');
+
+
+SELECT REVERSE('Hello World');
+ 
+SELECT REVERSE('meow meow');
+ 
+SELECT REVERSE(author_fname) FROM books;
+ 
+SELECT CONCAT('woof', REVERSE('woof'));
+ 
+SELECT CONCAT(author_fname, REVERSE(author_fname)) FROM books;
+
+---------------
+CHAR_LENGTH 
+count char in string 
+SELECT CHAR_LENGTH('put whvatever in here');
+
+http://www.dpriver.com/pp/sqlformat.htm
+
+helpful to make syntax look prettier, 
+
+-----------------------------
+SELECT CHAR_LENGTH('Hello World');
+ 
+SELECT author_lname, CHAR_LENGTH(author_lname) AS 'length' FROM books;
+ 
+SELECT CONCAT(author_lname, ' is ', CHAR_LENGTH(author_lname), ' characters long') FROM books;
+
+----------------
+
+UPPER() AND LOWER() 
+
+CHANGE STRINGS CASE 
+
+SELECT UPPER(PUT STUFF IN HERE); 
+
+SELECT UPPER('Hello World');
+ 
+SELECT LOWER('Hello World');
+ 
+SELECT UPPER(title) FROM books;
+ 
+SELECT CONCAT('MY FAVORITE BOOK IS ', UPPER(title)) FROM books;
+ 
+SELECT CONCAT('MY FAVORITE BOOK IS ', LOWER(title)) FROM books;
+
+----------------------------------
+
+Section 7, Lecture 118
+SELECT REVERSE(UPPER('Why does my cat look at me with such hatred?')); 
+
+
+SELECT UPPER(REVERSE('Why does my cat look at me with such hatred?')); 
+
+
+I-like-cats 
+
+
+SELECT REPLACE(CONCAT('I', ' ', 'like', ' ', 'cats'), ' ', '-'); 
+
+
+SELECT REPLACE(title, ' ', '->') AS title FROM books; 
+
+
+
+SELECT 
+   author_lname AS forwards,
+   REVERSE(author_lname) AS backwards 
+FROM books;
+
+
+SELECT
+   UPPER
+   (
+      CONCAT(author_fname, ' ', author_lname)
+   ) AS 'full name in caps'
+FROM books;
+
+
+SELECT
+   CONCAT(title, ' was released in ', released_year) AS blurb
+FROM books;
+SELECT
+   title,
+   CHAR_LENGTH(title) AS 'character count'
+FROM books;
+
+
+SELECT
+   CONCAT(SUBSTRING(title, 1, 10), '...') AS 'short title',
+   CONCAT(author_lname, ',', author_fname) AS author,
+   CONCAT(stock_quantity, ' in stock') AS quantity
+FROM books;
+
+-----------------------
+
+INSERT INTO books
+    (title, author_fname, author_lname, released_year, stock_quantity, pages)
+    VALUES ('10% Happier', 'Dan', 'Harris', 2014, 29, 256), 
+           ('fake_book', 'Freida', 'Harris', 2001, 287, 428),
+           ('Lincoln In The Bardo', 'George', 'Saunders', 2017, 1000, 367);
+ 
+ 
+SELECT title FROM books;
+
+-------------
+
+using DISTINCT 
+
+use with select, gets ride of duplicates 
+
+SELECT DISTINCT author_lname FROM books; 
+
+---
+
+SELECT author_lname FROM books;
+ 
+SELECT DISTINCT author_lname FROM books;
+ 
+SELECT author_fname, author_lname FROM books;
+ 
+SELECT DISTINCT CONCAT(author_fname,' ', author_lname) FROM books;
+ 
+SELECT DISTINCT author_fname, author_lname FROM books;
+
+-----------
+
+
+
+
