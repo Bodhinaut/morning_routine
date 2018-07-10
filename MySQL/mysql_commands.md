@@ -1040,6 +1040,94 @@ SELECT title FROM books LIMIT 5, 123219476457;
  
 SELECT title FROM books LIMIT 5, 50;
 
----
+-----
+
+like better searching with LIKE, 
+
+perform better searching with data, 
+
+select all harry potter books for example, 
+
+ ..... WHERE author_fname LIKE '%da%' 
+where the auuthor name has da in it, these --> % are called wild cards, 
+meets anything with da in it, anywhere, 
+
+if you wnt that STARTS WITH da, leave out the first wild card, 
+
+LIKE 'da%
+
+like is important and useful; 
 
 
+Section 8, Lecture 129
+SELECT title, author_fname FROM books WHERE author_fname LIKE '%da%';
+ 
+SELECT title, author_fname FROM books WHERE author_fname LIKE 'da%';
+ 
+SELECT title FROM books WHERE  title LIKE 'the';
+ 
+SELECT title FROM books WHERE  title LIKE '%the';
+ 
+SELECT title FROM books WHERE title LIKE '%the%';
+
+-------------
+
+LIKE 
+.... WHERE stock_quantity LIKE '____' 
+USED for specifying and matching patterns, like in phone numbers for example, 
+
+REGEX important here, 
+
+235-345-5432 LIKE '___-___-____' 
+_ is exatcly one thing, 
+
+if looking for % use escape characters, 
+
+SELECT title, stock_quantity FROM books;
+ 
+SELECT title, stock_quantity FROM books WHERE stock_quantity LIKE '____';
+ 
+SELECT title, stock_quantity FROM books WHERE stock_quantity LIKE '__';
+ 
+(235)234-0987 LIKE '(___)___-____'
+ 
+SELECT title FROM books;
+ 
+SELECT title FROM books WHERE title LIKE '%\%%'
+ 
+SELECT title FROM books WHERE title LIKE '%\_%'
+
+---------------
+
+
+Section 8, Lecture 134
+SELECT title FROM books WHERE title LIKE '%stories%';
+ 
+SELECT title, pages FROM books ORDER BY pages DESC LIMIT 1;
+ 
+SELECT 
+    CONCAT(title, ' - ', released_year) AS summary 
+FROM books ORDER BY released_year DESC LIMIT 3;
+ 
+SELECT title, author_lname FROM books WHERE author_lname LIKE '% %';
+ 
+SELECT title, released_year, stock_quantity 
+FROM books ORDER BY stock_quantity LIMIT 3;
+ 
+SELECT title, author_lname 
+FROM books ORDER BY author_lname, title;
+ 
+SELECT title, author_lname 
+FROM books ORDER BY 2,1;
+ 
+SELECT
+    CONCAT(
+        'MY FAVORITE AUTHOR IS ',
+        UPPER(author_fname),
+        ' ',
+        UPPER(author_lname),
+        '!'
+    ) AS yell
+FROM books ORDER BY author_lname;
+
+-------------------------
