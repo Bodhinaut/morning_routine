@@ -903,5 +903,473 @@ FROM books;
 
 -----------------------
 
+INSERT INTO books
+    (title, author_fname, author_lname, released_year, stock_quantity, pages)
+    VALUES ('10% Happier', 'Dan', 'Harris', 2014, 29, 256), 
+           ('fake_book', 'Freida', 'Harris', 2001, 287, 428),
+           ('Lincoln In The Bardo', 'George', 'Saunders', 2017, 1000, 367);
+ 
+ 
+SELECT title FROM books;
 
+-------------
+
+using DISTINCT 
+
+use with select, gets ride of duplicates 
+
+SELECT DISTINCT author_lname FROM books; 
+
+---
+
+SELECT author_lname FROM books;
+ 
+SELECT DISTINCT author_lname FROM books;
+ 
+SELECT author_fname, author_lname FROM books;
+ 
+SELECT DISTINCT CONCAT(author_fname,' ', author_lname) FROM books;
+ 
+SELECT DISTINCT author_fname, author_lname FROM books;
+
+-----------
+
+
+ORDER
+
+SELECT author_laname FROM books ORDER BY author_lname;
+alphabetical 
+if you add DESC on the end it reverses the order 
+----------
+can sort numbers as well, 
+
+YOU CAN mix and match, 
+
+like SELECT title, released_year, pages FROM books ORDER BY title; etc... 
+
+
+SELECT title, author_fname, author_lname, FROM books ORDER BY 2; 
+
+2 is a short cut to order is by firstname for example, 
+
+---
+
+Section 8, Lecture 125
+SELECT author_lname FROM books;
+ 
+SELECT author_lname FROM books ORDER BY author_lname;
+ 
+SELECT title FROM books;
+ 
+SELECT title FROM books ORDER BY title;
+SELECT author_lname FROM books ORDER BY author_lname DESC;
+ 
+SELECT released_year FROM books;
+ 
+SELECT released_year FROM books ORDER BY released_year;
+ 
+SELECT released_year FROM books ORDER BY released_year DESC;
+ 
+SELECT released_year FROM books ORDER BY released_year ASC;
+ 
+SELECT title, released_year, pages FROM books ORDER BY released_year;
+ 
+SELECT title, pages FROM books ORDER BY released_year;
+ 
+SELECT title, author_fname, author_lname 
+FROM books ORDER BY 2;
+ 
+SELECT title, author_fname, author_lname 
+FROM books ORDER BY 3;
+ 
+SELECT title, author_fname, author_lname 
+FROM books ORDER BY 1;
+ 
+SELECT title, author_fname, author_lname 
+FROM books ORDER BY 1 DESC;
+ 
+SELECT author_lname, title
+FROM books ORDER BY 2;
+ 
+SELECT author_fname, author_lname FROM books 
+ORDER BY author_lname, author_fname;
+
+above is importatn, you are ordering and need alpha but what if same last name? order
+then by the first name; 
+---
+LIMIT 
+I want the first 2 best selling books as opposed to all of them 
+
+----------
+
+Section 8, Lecture 127
+SELECT title FROM books LIMIT 3;
+ 
+SELECT title FROM books LIMIT 1;
+ 
+SELECT title FROM books LIMIT 10;
+ 
+SELECT * FROM books LIMIT 1;
+ 
+SELECT title, released_year FROM books 
+ORDER BY released_year DESC LIMIT 5;
+ 
+SELECT title, released_year FROM books 
+ORDER BY released_year DESC LIMIT 1;
+ 
+SELECT title, released_year FROM books 
+ORDER BY released_year DESC LIMIT 14;
+ 
+SELECT title, released_year FROM books 
+ORDER BY released_year DESC LIMIT 0,5;
+ 
+SELECT title, released_year FROM books 
+ORDER BY released_year DESC LIMIT 0,3;
+ 
+SELECT title, released_year FROM books 
+ORDER BY released_year DESC LIMIT 1,3;
+ 
+SELECT title, released_year FROM books 
+ORDER BY released_year DESC LIMIT 10,1;
+ 
+SELECT * FROM tbl LIMIT 95,18446744073709551615;
+ 
+SELECT title FROM books LIMIT 5;
+ 
+SELECT title FROM books LIMIT 5, 123219476457;
+ 
+SELECT title FROM books LIMIT 5, 50;
+
+-----
+
+like better searching with LIKE, 
+
+perform better searching with data, 
+
+select all harry potter books for example, 
+
+ ..... WHERE author_fname LIKE '%da%' 
+where the auuthor name has da in it, these --> % are called wild cards, 
+meets anything with da in it, anywhere, 
+
+if you wnt that STARTS WITH da, leave out the first wild card, 
+
+LIKE 'da%
+
+like is important and useful; 
+
+
+Section 8, Lecture 129
+SELECT title, author_fname FROM books WHERE author_fname LIKE '%da%';
+ 
+SELECT title, author_fname FROM books WHERE author_fname LIKE 'da%';
+ 
+SELECT title FROM books WHERE  title LIKE 'the';
+ 
+SELECT title FROM books WHERE  title LIKE '%the';
+ 
+SELECT title FROM books WHERE title LIKE '%the%';
+
+-------------
+
+LIKE 
+.... WHERE stock_quantity LIKE '____' 
+USED for specifying and matching patterns, like in phone numbers for example, 
+
+REGEX important here, 
+
+235-345-5432 LIKE '___-___-____' 
+_ is exatcly one thing, 
+
+if looking for % use escape characters, 
+
+SELECT title, stock_quantity FROM books;
+ 
+SELECT title, stock_quantity FROM books WHERE stock_quantity LIKE '____';
+ 
+SELECT title, stock_quantity FROM books WHERE stock_quantity LIKE '__';
+ 
+(235)234-0987 LIKE '(___)___-____'
+ 
+SELECT title FROM books;
+ 
+SELECT title FROM books WHERE title LIKE '%\%%'
+ 
+SELECT title FROM books WHERE title LIKE '%\_%'
+
+---------------
+
+
+Section 8, Lecture 134
+SELECT title FROM books WHERE title LIKE '%stories%';
+ 
+SELECT title, pages FROM books ORDER BY pages DESC LIMIT 1;
+ 
+SELECT 
+    CONCAT(title, ' - ', released_year) AS summary 
+FROM books ORDER BY released_year DESC LIMIT 3;
+ 
+SELECT title, author_lname FROM books WHERE author_lname LIKE '% %';
+ 
+SELECT title, released_year, stock_quantity 
+FROM books ORDER BY stock_quantity LIMIT 3;
+ 
+SELECT title, author_lname 
+FROM books ORDER BY author_lname, title;
+ 
+SELECT title, author_lname 
+FROM books ORDER BY 2,1;
+ 
+SELECT
+    CONCAT(
+        'MY FAVORITE AUTHOR IS ',
+        UPPER(author_fname),
+        ' ',
+        UPPER(author_lname),
+        '!'
+    ) AS yell
+FROM books ORDER BY author_lname;
+
+-------------------------
+
+AVERAGES, COUTNING, SUMING, GORUPING DATA, this is all important, 
+which user is a power user? most likes comments etc... which hastrag generates the most 
+likes? backbone of lots of important stuff, 
+
+the COUNT FUNCTION 
+
+aggreate functions, aggregate data etc.. 
+
+COUNT 
+
+can work with GROUP BY as well as other things.... 
+
+SELECT COUNT(*) FROM books; 
+tells you 19 books for example, 
+
+how many autor first names?
+SELECE COUNT(author_lname) FROM books;
+need uniqte name,s use disting, 
+
+SELECT COUNT(DISTINCT author_fname) FROM books; 
+
+SELECT COUNT(DISTINCT author_lname, author_fname) FROM books; 
+
+how many titles contain 'the'? 
+
+SELECT COUNT(*) FROM books WHERE title LIKE '%the%';
+
+----------
+
+CODE: The Count Function
+Section 9, Lecture 137
+SELECT COUNT(*) FROM books;
+ 
+SELECT COUNT(author_fname) FROM books;
+ 
+SELECT COUNT(DISTINCT author_fname) FROM books;
+ 
+SELECT COUNT(DISTINCT author_lname) FROM books;
+ 
+SELECT COUNT(DISTINCT author_lname, author_fname) FROM books;
+ 
+SELECT title FROM books WHERE title LIKE '%the%';
+ 
+SELECT COUNT(*) FROM books WHERE title LIKE '%the%';
+
+--------------
+
+GROUP BY 
+
+average sum min max.... it summarizes or aggregates data identical data into single rows 
+
+take all movies in genre, and tell how many each genre has, add all sales for each variety, etc
+
+it makes essentially a super row, bedhind the scenes the data is groupes, 
+
+
+SELECT author_lname, COUNT(*) 
+FROM books GROUP BY author_lname; 
+
+will count the bedhin the scenes mega row stuff.... 
+
+Section 9, Lecture 139
+SELECT title, author_lname FROM books;
+ 
+SELECT title, author_lname FROM books
+GROUP BY author_lname
+SELECT author_lname, COUNT(*) 
+FROM books GROUP BY author_lname;
+ 
+ 
+SELECT title, author_fname, author_lname FROM books;
+ 
+SELECT title, author_fname, author_lname FROM books GROUP BY author_lname;
+ 
+SELECT author_fname, author_lname, COUNT(*) FROM books GROUP BY author_lname;
+ 
+SELECT author_fname, author_lname, COUNT(*) FROM books GROUP BY author_lname, author_fname;
+ 
+SELECT released_year FROM books;
+ 
+SELECT released_year, COUNT(*) FROM books GROUP BY released_year;
+ 
+SELECT CONCAT('In ', released_year, ' ', COUNT(*), ' book(s) released') AS year FROM books GROUP BY released_year;
+
+-----------
+
+Section 9, Lecture 141
+SELECT MIN(released_year) 
+FROM books;
+ 
+SELECT MIN(released_year) FROM books;
+ 
+SELECT MIN(pages) FROM books;
+ 
+SELECT MAX(pages) 
+FROM books;
+ 
+SELECT MAX(released_year) 
+FROM books;
+ 
+SELECT MAX(pages), title
+FROM books;
+
+-------------------
+
+Section 9, Lecture 143
+SELECT * FROM books 
+WHERE pages = (SELECT Min(pages) 
+                FROM books); 
+ 
+SELECT title, pages FROM books 
+WHERE pages = (SELECT Max(pages) 
+                FROM books); 
+ 
+SELECT title, pages FROM books 
+WHERE pages = (SELECT Min(pages) 
+                FROM books); 
+ 
+SELECT * FROM books 
+ORDER BY pages ASC LIMIT 1;
+ 
+SELECT title, pages FROM books 
+ORDER BY pages ASC LIMIT 1;
+ 
+SELECT * FROM books 
+ORDER BY pages DESC LIMIT 1;
+
+-----------
+
+Section 9, Lecture 145
+SELECT author_fname, 
+       author_lname, 
+       Min(released_year) 
+FROM   books 
+GROUP  BY author_lname, 
+          author_fname;
+ 
+SELECT
+  author_fname,
+  author_lname,
+  Max(pages)
+FROM books
+GROUP BY author_lname,
+         author_fname;
+ 
+SELECT
+  CONCAT(author_fname, ' ', author_lname) AS author,
+  MAX(pages) AS 'longest book'
+FROM books
+GROUP BY author_lname,
+         author_fname;
+
+-------
+
+Section 9, Lecture 147
+SELECT SUM(pages)
+FROM books;
+ 
+SELECT SUM(released_year) FROM books;
+ 
+SELECT author_fname,
+       author_lname,
+       Sum(pages)
+FROM books
+GROUP BY
+    author_lname,
+    author_fname;
+ 
+SELECT author_fname,
+       author_lname,
+       Sum(released_year)
+FROM books
+GROUP BY
+    author_lname,
+    author_fname;
+
+-----------
+
+Section 9, Lecture 149
+SELECT AVG(released_year) 
+FROM books;
+ 
+SELECT AVG(pages) 
+FROM books;
+ 
+SELECT AVG(stock_quantity) 
+FROM books 
+GROUP BY released_year;
+ 
+SELECT released_year, AVG(stock_quantity) 
+FROM books 
+GROUP BY released_year;
+ 
+SELECT author_fname, author_lname, AVG(pages) FROM books
+GROUP BY author_lname, author_fname;
+
+----------
+
+Section 9, Lecture 152
+SELECT COUNT(*) FROM books;
+ 
+SELECT COUNT(*) FROM books GROUP BY released_year;
+ 
+SELECT released_year, COUNT(*) FROM books GROUP BY released_year;
+ 
+SELECT Sum(stock_quantity) FROM BOOKS;
+ 
+SELECT AVG(released_year) FROM books GROUP BY author_lname, author_fname;
+ 
+SELECT author_fname, author_lname, AVG(released_year) FROM books GROUP BY author_lname, author_fname;
+ 
+SELECT CONCAT(author_fname, ' ', author_lname) FROM books
+WHERE pages = (SELECT Max(pages) FROM books);
+ 
+SELECT CONCAT(author_fname, ' ', author_lname) FROM books
+ORDER BY pages DESC LIMIT 1;
+ 
+SELECT pages, CONCAT(author_fname, ' ', author_lname) FROM books
+ORDER BY pages DESC;
+ 
+SELECT released_year AS year,
+    COUNT(*) AS '# of books',
+    AVG(pages) AS 'avg pages'
+FROM books
+    GROUP BY released_year;
+
+------------
+CREATE TABLE dogs (name CHAR(5), breed VARCHAR(10));
+ 
+INSERT INTO dogs (name, breed) VALUES ('bob', 'beagle');
+ 
+INSERT INTO dogs (name, breed) VALUES ('robby', 'corgi');
+ 
+INSERT INTO dogs (name, breed) VALUES ('Princess Jane', 'Retriever');
+ 
+SELECT * FROM dogs;
+ 
+INSERT INTO dogs (name, breed) VALUES ('Princess Jane', 'Retrievesadfdsafdasfsafr');
+ 
+SELECT * FROM dogs;
 
