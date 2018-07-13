@@ -3,6 +3,29 @@ mysql commands
 
 remember to pick up at data types if you need at some point for review; 
 
+
+Topics:
+SQL Intro
+Normalization
+SQL Syntax
+SQL Select
+SQL Distinct
+SQL Where
+SQL And & Or
+SQL Order By
+SQL Insert
+SQL Update
+SQL Delete
+SQL Select Into
+SQL Create DB
+SQL Create Table
+SQL Constraints
+SQL Not Null
+SQL Unique
+SQL Primary Key
+SQL Foreign Key
+SQL Joins
+SQL Stored Procedures
 ---
 
 
@@ -1745,6 +1768,556 @@ WHERE  author_lname = 'Eggers'
 OR     stock_quantity > 100;
 
 ---
+
+BETWEEN AND NOT BETWEEN 
+use cast to convert date to date time etc.... some date times btween 2 dates, use cast, 
+
+---
+CODE: In And Not In
+Section 11, Lecture 192
+show databases();
+use book_shop;
+ 
+SELECT 
+    title, 
+    author_lname 
+FROM books
+WHERE author_lname='Carver' OR
+      author_lname='Lahiri' OR
+      author_lname='Smith';
+ 
+SELECT title, author_lname FROM books
+WHERE author_lname IN ('Carver', 'Lahiri', 'Smith');
+ 
+SELECT title, released_year FROM books
+WHERE released_year IN (2017, 1985);
+ 
+SELECT title, released_year FROM books
+WHERE released_year != 2000 AND
+      released_year != 2002 AND
+      released_year != 2004 AND
+      released_year != 2006 AND
+      released_year != 2008 AND
+      released_year != 2010 AND
+      released_year != 2012 AND
+      released_year != 2014 AND
+      released_year != 2016;
+ 
+SELECT title, released_year FROM books
+WHERE released_year NOT IN 
+(2000,2002,2004,2006,2008,2010,2012,2014,2016);
+ 
+SELECT title, released_year FROM books
+WHERE released_year >= 2000
+AND released_year NOT IN 
+(2000,2002,2004,2006,2008,2010,2012,2014,2016);
+ 
+SELECT title, released_year FROM books
+WHERE released_year >= 2000 AND
+released_year % 2 != 0;
+ 
+SELECT title, released_year FROM books
+WHERE released_year >= 2000 AND
+released_year % 2 != 0 ORDER BY released_year;
+
+---
+
+CODE: Case Statements
+Section 11, Lecture 194
+SELECT title, released_year,
+       CASE 
+         WHEN released_year >= 2000 THEN 'Modern Lit'
+         ELSE '20th Century Lit'
+       END AS GENRE
+FROM books;
+ 
+SELECT title, stock_quantity,
+    CASE 
+        WHEN stock_quantity BETWEEN 0 AND 50 THEN '*'
+        WHEN stock_quantity BETWEEN 51 AND 100 THEN '**'
+        ELSE '***'
+    END AS STOCK
+FROM books;
+ 
+SELECT title,
+    CASE 
+        WHEN stock_quantity BETWEEN 0 AND 50 THEN '*'
+        WHEN stock_quantity BETWEEN 51 AND 100 THEN '**'
+        ELSE '***'
+    END AS STOCK
+FROM books;
+ 
+SELECT title, stock_quantity,
+    CASE 
+        WHEN stock_quantity BETWEEN 0 AND 50 THEN '*'
+        WHEN stock_quantity BETWEEN 51 AND 100 THEN '**'
+        WHEN stock_quantity BETWEEN 101 AND 150 THEN '***'
+        ELSE '****'
+    END AS STOCK
+FROM books;
+ 
+SELECT title, stock_quantity,
+    CASE 
+        WHEN stock_quantity <= 50 THEN '*'
+        WHEN stock_quantity <= 100 THEN '**'
+        ELSE '***'
+    END AS STOCK
+FROM books; 
+
+---
+
+CODE: Logical Operators Exercises Solution
+Section 11, Lecture 197
+SELECT 10 != 10;
+-- false
+ 
+SELECT 15 > 14 && 99 - 5 <= 94;
+-- true
+ 
+SELECT 1 IN (5,3) || 9 BETWEEN 8 AND 10;
+-- true
+ 
+SELECT title, released_year FROM books WHERE released_year < 1980;
+ 
+SELECT title, author_lname FROM books WHERE author_lname='Eggers' OR author_lname='Chabon';
+ 
+SELECT title, author_lname FROM books WHERE author_lname IN ('Eggers','Chabon');
+ 
+SELECT title, author_lname, released_year FROM books WHERE author_lname = 'Lahiri' && released_year > 2000;
+ 
+SELECT title, pages FROM books WHERE pages >= 100 && pages <=200;
+ 
+SELECT title, pages FROM books WHERE pages BETWEEN 100 AND 200;
+ 
+SELECT 
+    title, 
+    author_lname 
+FROM books 
+WHERE 
+    author_lname LIKE 'C%' OR 
+    author_lname LIKE 'S%';
+ 
+SELECT 
+    title, 
+    author_lname 
+FROM books 
+WHERE 
+    SUBSTR(author_lname,1,1) = 'C' OR 
+    SUBSTR(author_lname,1,1) = 'S';
+ 
+SELECT title, author_lname FROM books 
+WHERE SUBSTR(author_lname,1,1) IN ('C', 'S');
+ 
+SELECT 
+    title, 
+    author_lname,
+    CASE
+        WHEN title LIKE '%stories%' THEN 'Short Stories'
+        WHEN title = 'Just Kids' OR title = 'A Heartbreaking Work of Staggering Genius' THEN 'Memoir'
+        ELSE 'Novel'
+    END AS TYPE
+FROM books;
+ 
+SELECT author_fname, author_lname,
+    CASE 
+        WHEN COUNT(*) = 1 THEN '1 book'
+        ELSE CONCAT(COUNT(*), ' books')
+    END AS COUNT
+FROM books 
+GROUP BY author_lname, author_fname;
+
+---
+ONE TO MANY RELATIONSHIP BASICS 
+
+1:MANY 
+
+ITS ALMOST ALWAYS BETTER TO KEEP TABLES SEPERATE, 
+
+PRIMARY KEY BABAAAAY
+
+----
+
+conventional for foreign key to be called whatername_id
+
+
+---
+
+CODE: Working With Foreign Keys
+Section 12, Lecture 203
+-- Creating the customers and orders tables
+
+CREATE TABLE customers(
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    first_name VARCHAR(100),
+    last_name VARCHAR(100),
+    email VARCHAR(100)
+);
+CREATE TABLE orders(
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    order_date DATE,
+    amount DECIMAL(8,2),
+    customer_id INT,
+    FOREIGN KEY(customer_id) REFERENCES customers(id)
+);
+-- Inserting some customers and orders
+
+INSERT INTO customers (first_name, last_name, email) 
+VALUES ('Boy', 'George', 'george@gmail.com'),
+       ('George', 'Michael', 'gm@gmail.com'),
+       ('David', 'Bowie', 'david@gmail.com'),
+       ('Blue', 'Steele', 'blue@gmail.com'),
+       ('Bette', 'Davis', 'bette@aol.com');
+       
+INSERT INTO orders (order_date, amount, customer_id)
+VALUES ('2016/02/10', 99.99, 1),
+       ('2017/11/11', 35.50, 1),
+       ('2014/12/12', 800.67, 2),
+       ('2015/01/03', 12.50, 2),
+       ('1999/04/11', 450.25, 5);
+       
+-- This INSERT fails because of our fk constraint.  No user with id: 98
+
+
+
+INSERT INTO orders (order_date, amount, customer_id)
+VALUES ('2016/06/06', 33.67, 98);
+
+---
+
+joins take 2 tables and allow us to conjoin them, usualy in a meaningful way, 
+take every customer and conjoin with every order 
+SELECT * FROM customers, orders; 
+
+this is meaningless though ^ 
+
+whittle down to overlap. with customer and id be the same for example, 
+
+
+CODE: Cross Joins
+Section 12, Lecture 205
+-- Finding Orders Placed By George: 2 Step Process
+
+SELECT id FROM customers WHERE last_name='George';
+SELECT * FROM orders WHERE customer_id = 1;
+-- Finding Orders Placed By George: Using a subquery
+
+SELECT * FROM orders WHERE customer_id =
+    (
+        SELECT id FROM customers
+        WHERE last_name='George'
+    );
+-- Cross Join Craziness
+
+SELECT * FROM customers, orders; 
+implicit join, cross join, useless, takes every possible combonation 
+-----------
+now see inner join, see not arbitrary orders but, usefu information 
+
+customer.id after the where 
+
+implicit inner join 
+
+next will be explicit inner join, 
+
+inner join, create union table, create the overlap. 
+
+joining table based off of conditions 
+
+does order matter? 
+
+---
+
+CODE: Inner Joins
+Section 12, Lecture 207
+-- IMPLICIT INNER JOIN
+
+SELECT * FROM customers, orders 
+WHERE customers.id = orders.customer_id;
+-- IMPLICIT INNER JOIN
+
+SELECT first_name, last_name, order_date, amount
+FROM customers, orders 
+    WHERE customers.id = orders.customer_id;
+    
+-- EXPLICIT INNER JOINS
+
+SELECT * FROM customers
+JOIN orders
+    ON customers.id = orders.customer_id;
+    
+SELECT first_name, last_name, order_date, amount 
+FROM customers
+JOIN orders
+    ON customers.id = orders.customer_id;
+    
+SELECT *
+FROM orders
+JOIN customers
+    ON customers.id = orders.customer_id;
+-- ARBITRARY JOIN - meaningless, but still possible 
+
+SELECT * FROM customers
+JOIN orders ON customers.id = orders.id;
+
+---
+
+LEFT JOIN - select all from left and matching any records in B 
+
+SO COULD SHOW USERS WITH NO ORDERS FOR EXAMPE 
+
+
+CODE: Left Joins
+Section 12, Lecture 209
+-- Getting Fancier (Inner Joins Still)
+
+SELECT first_name, last_name, order_date, amount 
+FROM customers
+JOIN orders
+    ON customers.id = orders.customer_id
+ORDER BY order_date;
+SELECT 
+    first_name, 
+    last_name, 
+    SUM(amount) AS total_spent
+FROM customers
+JOIN orders
+    ON customers.id = orders.customer_id
+GROUP BY orders.customer_id
+ORDER BY total_spent DESC;
+-- LEFT JOINS
+
+SELECT * FROM customers
+LEFT JOIN orders
+    ON customers.id = orders.customer_id;
+SELECT first_name, last_name, order_date, amount
+FROM customers
+LEFT JOIN orders
+    ON customers.id = orders.customer_id; 
+SELECT 
+    first_name, 
+    last_name,
+    IFNULL(SUM(amount), 0) AS total_spent
+FROM customers
+LEFT JOIN orders
+    ON customers.id = orders.customer_id
+GROUP BY customers.id
+ORDER BY total_spent;
+
+---
+
+RIGHT JOIN IS THE SAME AS LEFT BUT REVERSE 
+
+CODE: Right Joins Part 1
+Section 12, Lecture 211
+-- OUR FIRST RIGHT JOIN (seems the same as a left join?)
+
+SELECT * FROM customers
+RIGHT JOIN orders
+    ON customers.id = orders.customer_id;
+
+-- ALTERING OUR SCHEMA to allow for a better example (optional)
+
+CREATE TABLE customers(
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    first_name VARCHAR(100),
+    last_name VARCHAR(100),
+    email VARCHAR(100)
+);
+CREATE TABLE orders(
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    order_date DATE,
+    amount DECIMAL(8,2),
+    customer_id INT
+);
+-- INSERTING NEW DATA (no longer bound by foreign key constraint)
+
+INSERT INTO customers (first_name, last_name, email) 
+VALUES ('Boy', 'George', 'george@gmail.com'),
+       ('George', 'Michael', 'gm@gmail.com'),
+       ('David', 'Bowie', 'david@gmail.com'),
+       ('Blue', 'Steele', 'blue@gmail.com'),
+       ('Bette', 'Davis', 'bette@aol.com');
+       
+INSERT INTO orders (order_date, amount, customer_id)
+VALUES ('2016/02/10', 99.99, 1),
+       ('2017/11/11', 35.50, 1),
+       ('2014/12/12', 800.67, 2),
+       ('2015/01/03', 12.50, 2),
+       ('1999/04/11', 450.25, 5);
+ 
+INSERT INTO orders (order_date, amount, customer_id) VALUES
+('2017/11/05', 23.45, 45),
+(CURDATE(), 777.77, 109);
+
+---
+on delete cascade is important if someting gets deleted it is not left tkaing up data as null, 
+
+
+CODE: Right Joins Part 2
+Section 12, Lecture 213
+--A MORE COMPLEX RIGHT JOIN
+
+
+
+SELECT 
+    IFNULL(first_name,'MISSING') AS first, 
+    IFNULL(last_name,'USER') as last, 
+    order_date, 
+    amount, 
+    SUM(amount)
+FROM customers
+RIGHT JOIN orders
+    ON customers.id = orders.customer_id
+GROUP BY first_name, last_name;
+-- WORKING WITH ON DELETE CASCADE
+
+CREATE TABLE customers(
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    first_name VARCHAR(100),
+    last_name VARCHAR(100),
+    email VARCHAR(100)
+);
+ 
+CREATE TABLE orders(
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    order_date DATE,
+    amount DECIMAL(8,2),
+    customer_id INT,
+    FOREIGN KEY(customer_id) 
+        REFERENCES customers(id)
+        ON DELETE CASCADE
+);
+ 
+ 
+INSERT INTO customers (first_name, last_name, email) 
+VALUES ('Boy', 'George', 'george@gmail.com'),
+       ('George', 'Michael', 'gm@gmail.com'),
+       ('David', 'Bowie', 'david@gmail.com'),
+       ('Blue', 'Steele', 'blue@gmail.com'),
+       ('Bette', 'Davis', 'bette@aol.com');
+       
+INSERT INTO orders (order_date, amount, customer_id)
+VALUES ('2016/02/10', 99.99, 1),
+       ('2017/11/11', 35.50, 1),
+       ('2014/12/12', 800.67, 2),
+       ('2015/01/03', 12.50, 2),
+       ('1999/04/11', 450.25, 5);
+
+---
+
+CODE: Right and Left Joins FAQ
+Section 12, Lecture 215
+SELECT * FROM customers
+LEFT JOIN orders
+    ON customers.id = orders.customer_id;
+SELECT * FROM orders
+RIGHT JOIN customers
+    ON customers.id = orders.customer_id;    
+SELECT * FROM orders
+LEFT JOIN customers
+    ON customers.id = orders.customer_id;    
+SELECT * FROM customers
+RIGHT JOIN orders
+    ON customers.id = orders.customer_id;
+
+---
+
+CODE: Our First Joins Exercise
+Section 12, Lecture 218
+-- The Schema
+
+CREATE TABLE students (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    first_name VARCHAR(100)
+);
+ 
+ 
+CREATE TABLE papers (
+    title VARCHAR(100),
+    grade INT,
+    student_id INT,
+    FOREIGN KEY (student_id) 
+        REFERENCES students(id)
+        ON DELETE CASCADE
+);
+-- The Starter Data
+
+INSERT INTO students (first_name) VALUES 
+('Caleb'), 
+('Samantha'), 
+('Raj'), 
+('Carlos'), 
+('Lisa');
+ 
+INSERT INTO papers (student_id, title, grade ) VALUES
+(1, 'My First Book Report', 60),
+(1, 'My Second Book Report', 75),
+(2, 'Russian Lit Through The Ages', 94),
+(2, 'De Montaigne and The Art of The Essay', 98),
+(4, 'Borges and Magical Realism', 89);
+ 
+
+---
+
+CODE: Our First Joins Exercise SOLUTION PT. 2
+Section 12, Lecture 220
+-- EXERCISE 1
+
+SELECT first_name, title, grade
+FROM students
+INNER JOIN papers
+    ON students.id = papers.student_id
+ORDER BY grade DESC;
+-- ALT SOLUTION
+
+SELECT first_name, title, grade
+FROM students
+RIGHT JOIN papers
+    ON students.id = papers.student_id
+ORDER BY grade DESC;
+-- PROBLEM 2
+
+SELECT first_name, title, grade
+FROM students
+LEFT JOIN papers
+    ON students.id = papers.student_id;
+-- PROBLEM 3
+
+SELECT
+    first_name,
+    IFNULL(title, 'MISSING'),
+    IFNULL(grade, 0)
+FROM students
+LEFT JOIN papers
+    ON students.id = papers.student_id;
+    
+-- PROBLEM 4
+
+SELECT
+    first_name,
+    IFNULL(AVG(grade), 0) AS average
+FROM students
+LEFT JOIN papers
+    ON students.id = papers.student_id
+GROUP BY students.id
+ORDER BY average DESC;
+-- PROBLEM 5
+
+SELECT first_name, 
+       Ifnull(Avg(grade), 0) AS average, 
+       CASE 
+         WHEN Avg(grade) IS NULL THEN 'FAILING' 
+         WHEN Avg(grade) >= 75 THEN 'PASSING' 
+         ELSE 'FAILING' 
+       end                   AS passing_status 
+FROM   students 
+       LEFT JOIN papers 
+              ON students.id = papers.student_id 
+GROUP  BY students.id 
+ORDER  BY average DESC;
+
+
+
 
 
 
