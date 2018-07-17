@@ -23,3 +23,18 @@ In general to start developing in Python with PyCharm you need to download, inst
 
 ---
 
+**Step 1**
+
+**Open/Create a project in PyCharm**
+
+Why do I need a project?
+
+Everything you do in PyCharm is done within the context of a project. It serves as a basis for coding assistance, bulk refactoring, coding style consistency, etc.
+
+You have three options to start working on a project inside the IDE:
+
+Open an existing project
+
+Begin by opening one of your existing projects stored on your computer. You can do by clicking Open Project on the Welcome screen (or choosig File | Open):
+
+---
