@@ -3,10 +3,13 @@ https://www.jetbrains.com/pycharm/documentation/
 ---
 
 
-Quick Start Guide
-This Quick Start Guide is designed to introduce the key concepts and help you make a quick start with the IDE.
+### Quick Start Guide
 
-Step 0. Before you start
+#### This Quick Start Guide is designed to introduce the key concepts and help you make a quick start with the IDE.
+
+**Step 0. Before you start**
+
+
 Which languages does PyCharm support?
 With PyCharm you can develop applications in Python. In addition, in the Professional edition, one can develop Django, Flask and Pyramid applications. Also, it fully supports HTML (including HTML5), CSS, JavaScript, and XML: these languages are bundled in the IDE via plugins and are switched on for you by default. Support for the other languages and frameworks can also be added via plugins (go to Settings | Plugins or PyCharm | Preferences | Plugins for macOS users, to find out more or set them up during the first IDE launch).
 
