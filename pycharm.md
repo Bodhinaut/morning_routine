@@ -38,3 +38,10 @@ Open an existing project
 Begin by opening one of your existing projects stored on your computer. You can do by clicking Open Project on the Welcome screen (or choosig File | Open):
 
 ---
+
+**Step 2. Look around**
+
+
+When you launch PyCharm for the very first time, or when there are no open projects, you see the Welcome screen. It gives you the main entry points into the IDE: creating or opening a project, checking out a project from version control, viewing documentation, and configuring the IDE.
+
+When a project is opened, you see the main window divided into several logical areas. Let’s take a moment to see the key UI elements here:
