@@ -56,4 +56,18 @@ The status bar indicates the status of your project and the entire IDE, and show
 Also, in the bottom-left corner of the PyCharm window, in the Status bar, you see the button  show hide tool window bars or show tool window bars. This button toggles the showing of the tool window bars. If you hover your mouse pointer over this button, the list of the currently available tool windows show up:
 
 ---
+Step 3. Customize your environment
+Feel free to tweak the IDE so it suits your needs perfectly and is as helpful and comfortable as it can be. Go to File | Settings (PyCharm | Preferences for macOS users) to see the list of available customization options.
+
+Appearance
+The first thing to fine-tune is the general "look and feel." Go to File | Settings | Appearance and Behavior | Appearance (PyCharm | Preferences | Appearance and Behavior | Appearance for macOS users) to select the IDE theme: the default light theme, or Darcula if you prefer a darker setting.
+
+Editor
+The many pages available under File | Settings | Editor (PyCharm | Preferences | Editor for macOS users) help you adjust every aspect of the editor’s behavior. A lot of options are available here, from general settings (like Drag'n'Drop enabling, scrolling configuration, etc.), to color configuration for each available language and use case, to tabs and code folding settings, to code completion behavior and even postfix templates.
+
+Refer to the section Customizing PyCharm for details.
+
+Code style
+Code style can be defined for each language under File | Settings | Editor | Code Style (PyCharm | Preferences | Editor | Code Style for macOS users). You can also create and save your own coding style scheme.
+
 
