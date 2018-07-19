@@ -45,3 +45,15 @@ Begin by opening one of your existing projects stored on your computer. You can 
 When you launch PyCharm for the very first time, or when there are no open projects, you see the Welcome screen. It gives you the main entry points into the IDE: creating or opening a project, checking out a project from version control, viewing documentation, and configuring the IDE.
 
 When a project is opened, you see the main window divided into several logical areas. Let’s take a moment to see the key UI elements here:
+
+Project view on the left side displays your project files.
+Editor on the right side, where you actually write your code. It has tabs for easy navigation between open files.
+Navigation bar above the editor additionally allows you to quickly run and debug your application as well as do the basic VCS actions.
+Left gutter, the vertical stripe next to the editor, shows the breakpoints you have, and provides a convenient way to navigate through the code hierarchy like going to definition/declaration. It also shows line numbers and per-line VCS history.
+Right gutter, on the right side of the editor. PyCharm constantly monitors the quality of your code and always shows the results of its code inspections in the right gutter: errors, warnings, etc. The indicator in the top right-hand corner shows the overall status of code inspections for the entire file.
+Tool windows are specialized windows attached to the bottom and sides of the workspace and provide access to typical tasks such as project management, source code search and navigation, integration with version control systems, etc.
+The status bar indicates the status of your project and the entire IDE, and shows various warnings and information messages like file encoding, line separator, inspection profile, etc.
+Also, in the bottom-left corner of the PyCharm window, in the Status bar, you see the button  show hide tool window bars or show tool window bars. This button toggles the showing of the tool window bars. If you hover your mouse pointer over this button, the list of the currently available tool windows show up:
+
+---
+
