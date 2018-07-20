@@ -73,7 +73,7 @@ Refer to the section Customizing PyCharm for details.
 Code style
 Code style can be defined for each language under File | Settings | Editor | Code Style (PyCharm | Preferences | Editor | Code Style for macOS users). You can also create and save your own coding style scheme.
 
-Keymap
+_Keymap_
 
 PyCharm uses the keyboard-centric approach, meaning that nearly all actions possible in the IDE are mapped to keyboard shortcuts.
 
@@ -86,3 +86,17 @@ If you feel most productive with vi/Vim, an emulation mode will give you the bes
 Refer to the section Configuring Keyboard Shortcuts for details.
 
 ---
+
+**Step 4.** 
+
+Code with smart assistance
+PyCharm takes care of the routine so that you can focus on the important. Use the following coding capabilities to create error-free applications without wasting precious time.
+
+Code completion
+Code completion is a great time-saver, regardless of the type of file you’re working with.
+
+Basic completion works as you type and completes any name instantly.
+
+Smart type completion analyzes the context you’re currently working in and offers more accurate suggestions based on that analysis.
+
+
