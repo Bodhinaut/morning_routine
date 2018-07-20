@@ -56,7 +56,10 @@ The status bar indicates the status of your project and the entire IDE, and show
 Also, in the bottom-left corner of the PyCharm window, in the Status bar, you see the button  show hide tool window bars or show tool window bars. This button toggles the showing of the tool window bars. If you hover your mouse pointer over this button, the list of the currently available tool windows show up:
 
 ---
-Step 3. Customize your environment
+
+**Step 3.**
+
+Customize your environment
 Feel free to tweak the IDE so it suits your needs perfectly and is as helpful and comfortable as it can be. Go to File | Settings (PyCharm | Preferences for macOS users) to see the list of available customization options.
 
 Appearance
@@ -70,4 +73,16 @@ Refer to the section Customizing PyCharm for details.
 Code style
 Code style can be defined for each language under File | Settings | Editor | Code Style (PyCharm | Preferences | Editor | Code Style for macOS users). You can also create and save your own coding style scheme.
 
+Keymap
 
+PyCharm uses the keyboard-centric approach, meaning that nearly all actions possible in the IDE are mapped to keyboard shortcuts.
+
+The set of keyboard shortcuts you work with is one of your most intimate habits — your fingers "remember" certain combinations of keys, and changing this habit is easier said than done. PyCharm supplies you with a default keymap (choose Help | Keymap Reference on the main menu) making your coding really productive and convenient. However, you can always change it going to File | Settings | Keymap (PyCharm | Preferences | Keymap for macOS users).
+
+There are also some pre-defined keymaps (like Emacs, Visual Studio, Eclipse, NetBeans etc.), and you can also create your own keymap based on an existing one.
+
+If you feel most productive with vi/Vim, an emulation mode will give you the best of both worlds. Simply enable the IdeaVim plugin in the IDE and select the vim keymap.
+
+Refer to the section Configuring Keyboard Shortcuts for details.
+
+---
