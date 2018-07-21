@@ -99,4 +99,13 @@ Basic completion works as you type and completes any name instantly.
 
 Smart type completion analyzes the context you’re currently working in and offers more accurate suggestions based on that analysis.
 
+Intention actions
+PyCharm keeps an eye on what you are currently doing and makes smart suggestions, called intention actions, to save more of your time. Indicated with a lightbulb, intention actions let you apply automatic changes to code that is correct (in contrast to code inspections that provides quick-fixes for code that may be incorrect). Did you forget to add some parameters and field initializers to the constructor? Not a problem with PyCharm. Click the lightbulb (or press Alt+Enter) and select one of the suggested options:
+
+py QST intentionAction
+The full list of available intention actions can be found in File | Settings | Editor | Intentions or PyCharm | Preferences | Editor | Intentions for macOS users.
+
+---
+
+
 
