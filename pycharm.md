@@ -107,5 +107,14 @@ The full list of available intention actions can be found in File | Settings | E
 
 ---
 
+**Step 5. Keep your code neat**
 
+
+PyCharm monitors your code and tries to keep it accurate and clean. It detects potential errors and problems and suggests quick-fixes for them.
+
+Every time the IDE finds unused code, an endless loop, and many other things that likely require your attention, you’ll see a lightbulb. Click it, or press Alt+Enter, to apply a fix.
+
+The complete list of available inspections can be found under Settings | Editor | Inspections (or PyCharm | Preferences | Editor | Inspections for macOS users). Disable some of them, or enable others, plus adjust the severity of each inspection. You decide whether it should be considered an error or just a warning.
+
+---
 
