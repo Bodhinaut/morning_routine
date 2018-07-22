@@ -135,4 +135,50 @@ py QST surround with 2
 
 ---
 
+**Step 7. Find your way through**
+
+
+When your project is big, or when you have to work with someone else’s code, it’s vital to be able to quickly find what you are looking for and dig into the code. This is why PyCharm comes with a set of navigation and search features that help you find your way through any code no matter how tangled it is.
+
+Basic search
+With these search facilities, you can find and replace any fragment of code both in the currently opened file (Ctrl+F), or in an entire project (Ctrl+Shift+F).
+
+Search for usages
+To find where a particular symbol is used, PyCharm suggests full-scale search via Find Usages (Alt+F7):
+
+py QST find usages
+Project navigation
+You can tell a lot just looking at your File Structure, with its imports or call hierarchies:
+
+py QST file structure
+Also, you can navigate to:
+
+Class by its name (Ctrl+N).
+File by its name (Ctrl+Shift+N):
+py QST goToFile
+Symbol by its name (Ctrl+Shift+Alt+N).
+Declaration (Ctrl+B).
+Base class/base function (Ctrl+U).
+The icons in the left-hand gutter can also help you with navigation:
+
+py QST goToSubclass
+Navigate through the timeline
+Remembering all your activity in the project, PyCharm can easily navigate you to the Recent Files (Ctrl+E) or Recently Changed Files (Shift+Alt+C).
+
+To go through the history of changes, try using Back/Forward navigation (Ctrl+Alt+Left/ Ctrl+Alt+Right) and/or go to last edit location (Ctrl+Shift+Backspace).
+
+Find Action
+Take advantage of many smart actions possible with PyCharm. For example, use the Find Action search (Ctrl+Shift+A): just type a part of the action name, and the IDE will show you the list of all available options. Then, select the action you need:
+
+cl QST findAction
+Search Everywhere
+If you have a general idea of what you're looking for, you can always locate the corresponding element using one of the existing navigation features. But what if you really want to look for something in every nook and cranny? The answer is to use Search Everywhere!
+
+To try it, click the magnifying glass button in the upper right-hand corner of the window, or invoke it with Double Shift (press Shift twice).
+
+py QST search everywhere
+
+---
+
+
 
