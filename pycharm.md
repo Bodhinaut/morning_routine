@@ -118,3 +118,21 @@ The complete list of available inspections can be found under Settings | Editor 
 
 ---
 
+**Step 6. Generate some code**
+
+
+Writing code can be a lot easier and quicker when you use the code generation options available in PyCharm. The Code | Generate menu (Alt+Insert) will help you with creating symbols from usage, as well as suggest overriding/implementing some functions:
+
+py QST impl over
+Use live templates (choose Code | Insert Live Template or press Ctrl+J) to produce the entire code constructs. You can explore the available ready-to-use live templates In the Settings/Preferences dialog (Ctrl+Alt+S) (Settings | Editor | Live templates or PyCharm | Preferences | Editor | Live Templates if you are a macOS user).
+
+If you see that you are lacking something especially important for your development, extend this set of templates with your own. Also, consider quickly surrounding your code with complete constructs (choose Code | Surround With or press Ctrl+Alt+T. For example, select an if statement:
+
+py QST surround with 1
+and you will get:
+
+py QST surround with 2
+
+---
+
+
