@@ -234,4 +234,20 @@ Refer to the tutorial Step 3. Testing Your First Python Application and to the P
 
 ---
 
+**Step 9. Keep your source code under Version Control**
 
+
+VCS
+If you are keeping your source code under version control, you will be glad to know that PyCharm integrates with many popular version control systems: Git (or GitHub), Mercurial, Perforce (supported in Professional edition only), Subversion and CVS. To specify credentials and any settings specific to a particular VCS, go to Settings | Version Control (or PyCharm | Preferences | Version Control if you are a macOS user).
+
+The VCS menu gives you a clue about what commands are available. For example, you can see the changes you’ve made, commit them, create changelists and much more from the Local Changes view: VCS | Show Changes (or just press Alt+9). Also find some VCS basic commands in the Navigation bar above the editor:
+
+py QST VCSbasic
+Refer to the section Version control with PyCharm for details.
+
+Local history
+In addition to traditional version control, you can use the local history. With Local History, PyCharm automatically tracks changes you make to the source code, the results of refactoring, etc.
+
+Local history is always enabled. To view it for a file or a folder, bring up Local History by selecting VCS | Local History | Show History. Here you can review the changes, revert them or create a patch.
+
+---
