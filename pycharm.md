@@ -181,4 +181,57 @@ py QST search everywhere
 ---
 
 
+**Step 8. Run, debug and test**
+
+
+Now when you’ve played with the code and discovered what you can do with it, it’s time to run, debug and test your app.
+
+Run configuration
+When you perform run, debug, or test operations with PyCharm, you always start a process based on one of the existing run/debug configurations, using its parameters.
+
+Open the Run/Debug Configurations dialog Run | Edit Configurations to see all the available options. For example, if you want to run some script before/after the build phase, you can do this easily by creating an external tool:
+
+py QST runDebugConfiguration
+To run a configuration, press Shift+F10.
+
+Run
+The easiest way to run an application is to right-click its background in the editor, and then choose Run <name> on the context menu:
+
+py run context menu
+If your Python script contains the __main__ clause, then you can click the run from left gutter icon button in the left gutter, and then choose the desired command.
+
+Debug
+Does your application stumble on a run-time error? To find out what’s causing it, you will have to do some debugging. PyCharm supports the debugger on all platforms.
+
+Debugging starts with placing breakpoints at which program execution will be suspended, so you can explore program data. Just click the left gutter of the line where you want the breakpoint to appear.
+
+To start debugging your application, press Shift+F9. Then go through the program execution step by step (see the available options in the Run menu or in the Debug tool window), evaluate any arbitrary expression, add watches and manually set values for the variables.
+
+py QST debugger
+Refer to the section Debugging for details.
+
+Test
+It is a good idea to test your applications, and PyCharm helps doing it as simple as possible.
+
+With PyCharm, you can:
+
+Create tests
+Create special testing run/debug configurations.
+Run and debug tests right from the IDE, using the testing run/debug configurations.
+And, finally, the most important thing - you can explore test results in the test runner tab of the Run tool window:
+py test runner tab
+To learn about the numbers, read the Test Runner Tab section.
+
+PyCharm supports all the major Python testing frameworks:
+
+Unittest
+Doctest
+Nosetest
+py.test
+For each of these frameworks, PyCharm provides its own run/debug configuration.
+
+Refer to the tutorial Step 3. Testing Your First Python Application and to the Performing Tests section for details.
+
+---
+
 
