@@ -251,3 +251,18 @@ In addition to traditional version control, you can use the local history. With 
 Local history is always enabled. To view it for a file or a folder, bring up Local History by selecting VCS | Local History | Show History. Here you can review the changes, revert them or create a patch.
 
 ---
+
+**Step 10. Remote development**
+
+With PyCharm, one can use project interpreters located remotely. In the Settings/Preferences dialog (Ctrl+Alt+S), choose the page Project Interpreter, then click artwork studio icons logcat toolbar settings), and select Add :
+
+py add interpreter
+You can add and configure the following remote interpreters:
+
+SSH
+Vagrant
+Docker
+Docker Composer
+First, you can deploy your local applications to some remote server. To learn about deployment servers, refer to the section Configuring Synchronization with a Web Server. Having deployed an application, you can run, debug and test it remotely. PyCharm also helps you compare local and remote folders, and synchronize the local copy with that deployed on the server.
+
+---
