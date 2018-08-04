@@ -16,5 +16,9 @@ For the rest of this tutorial, you will be guided through the process of getting
 
 ---
 
-Basic Concepts
+### Basic Concepts
+
 There are a few concepts that are core to Elasticsearch. Understanding these concepts from the outset will tremendously help ease the learning process.
+
+* Near Realtime (NRT)edit
+Elasticsearch is a near real time search platform. What this means is there is a slight latency (normally one second) from the time you index a document until the time it becomes searchable.
