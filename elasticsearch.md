@@ -46,3 +46,9 @@ An index is a collection of documents that have somewhat similar characteristics
 
 In a single cluster, you can define as many indexes as you want.
 
+
+* Type 
+
+A type used to be a logical category/partition of your index to allow you to store different types of documents in the same index, eg one type for users, another type for blog posts. It is no longer possible to create multiple types in an index, and the whole concept of types will be removed in a later version. See Removal of mapping types for more.
+
+
