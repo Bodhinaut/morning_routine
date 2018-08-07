@@ -1,4 +1,4 @@
-Aggregate Functions
+### Aggregate Functions
  
 
 MIN	returns the smallest value in a given column
