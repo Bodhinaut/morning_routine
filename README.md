@@ -32,5 +32,5 @@
 
 ### 7/2/2018
 * Django Course, almost finshed with lesson overview
-* LSAT + PAAT
+* LSAT + PAAT, past AMEREN's PAAT
 * AWS review
