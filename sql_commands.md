@@ -5,6 +5,7 @@ remember to pick up at data types if you need at some point for review;
 
 
 Topics:
+
 SQL Intro
 Normalization
 SQL Syntax
@@ -26,6 +27,7 @@ SQL Primary Key
 SQL Foreign Key
 SQL Joins
 SQL Stored Procedures
+
 ---
 
 
